@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import userRouter from "./Routers/userRouter.js";
 import cors from "cors";
 
-dotenv.config();
+ 
 const app = express();
 
 app.use(express.json())
