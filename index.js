@@ -13,9 +13,10 @@ app.use(express.json({ extended: false, limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
 
  
-app.get("/",(req,res)=>{
+/* app.get("/",(req,res)=>{
     res.send("Merhaba benim dünyacık13.")
 })
+ */
 app.use("/users", userRouter); 
 app.listen(process.env.PORT||5000,()=>{
     mongoose
