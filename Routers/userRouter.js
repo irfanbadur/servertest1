@@ -54,7 +54,7 @@ router.get("/test", async (req,res)=>{
     return res.send({"deger":"Merhaba TEST post isteği","akim":23})
 
 })
-/* 
+
 router.post("/signup", async (req, res)=>{
     console.log("SIGN IN POST")
     try {
@@ -312,5 +312,5 @@ router.get("/messages", async (req, res)=>{
         return res.json({error,message: "create Project Template failed"})
     }
 }) 
-   */
+   
 export default router;
