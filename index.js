@@ -8,7 +8,7 @@ import cors from "cors";
 const app = express();
 
  
-app.use(express.json({ extended: false, limit: '50mb' }));
+app.use(express.json());
 
 
 app.get("/",(req,res)=>{
