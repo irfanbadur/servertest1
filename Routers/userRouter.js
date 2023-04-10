@@ -194,6 +194,11 @@ router.get("/admin", async (req,res)=>{
         return res.status(400).json({ message: error.message })
     }
 })
+router.post("/test", async (req,res)=>{ 
+    
+        return res.send("Merhaba TEST post isteği")
+    
+})
 router.post("/ProjeTaslak", async (req, res)=>{
     try {
         const { projectOwnerUser, projectNo, customer, arsaAdi,arsaAdresi,arsaIl,arsaIlce,

@@ -14,7 +14,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
 
  
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim dünyacık11.")
+    res.send("Merhaba benim dünyacık12.")
 })
 
 app.listen(process.env.PORT||5000,()=>{
