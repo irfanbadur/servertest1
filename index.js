@@ -14,9 +14,9 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
 
  
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim dünyacık12.")
+    res.send("Merhaba benim dünyacık13.")
 })
-
+app.use("/users", userRouter); 
 app.listen(process.env.PORT||5000,()=>{
     mongoose
     .connect(process.env.DB_CONNECTION_STRING2)
