@@ -7,15 +7,16 @@ import User from '../models/userModel.js';
 import ProjectTemplate from '../models/ProjeTaslak.js'
 import MusteriDB from '../models/MusteriModel.js'
 import Mesajlar from '../models/Mesajlar.js'
- */
 import Visitors from '../models/pageVisitors.js'
+
+ */
 import dotenv from "dotenv";
 dotenv.config();
 const router = express.Router();
 
 router.post("/", async (req,res)=>{    
     return res.send(  "ANA SAYFA")
-
+/* 
     console.log("Ana Sayfa")
     const localAdress= req.socket.localAddress
     const ziyaretler = await Visitors.find({ID:"pageVisitorsData"} )   
@@ -40,7 +41,7 @@ router.post("/", async (req,res)=>{
             return res.json({message: "Hata"})
         }   
 
-        
+ */        
 })
 
 /* 
