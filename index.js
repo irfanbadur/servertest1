@@ -7,10 +7,7 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 
-app.use(cors());
-app.use(express.json({ extended: false, limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
-
+app.use(express.json())
 
 app.get("/",(req,res)=>{
     res.send("Merhaba benim   dünyam.")
