@@ -1,4 +1,5 @@
 import express from "express";
+/* 
 import mongoose from "mongoose";
 import MongoClient from 'mongodb'
 import bcrypt from 'bcryptjs'
@@ -6,13 +7,43 @@ import User from '../models/userModel.js';
 import ProjectTemplate from '../models/ProjeTaslak.js'
 import MusteriDB from '../models/MusteriModel.js'
 import Mesajlar from '../models/Mesajlar.js'
+ */
 import Visitors from '../models/pageVisitors.js'
 import dotenv from "dotenv";
 dotenv.config();
 const router = express.Router();
 
+router.post("/", async (req,res)=>{    
+    return res.send(  "ANA SAYFA")
 
+    console.log("Ana Sayfa")
+    const localAdress= req.socket.localAddress
+    const ziyaretler = await Visitors.find({ID:"pageVisitorsData"} )   
 
+    let toplamZiyaret=      ziyaretler[0].toplamZiyaret+1
+    let locals=             ziyaretler[0].localAddress
+    let index=locals.indexOf(localAdress)
+    if(index===-1){
+        locals.push(localAdress)
+    }
+    try {
+            const visitor = await Visitors.updateOne(
+            { "ID": "pageVisitorsData"}, 
+           { $set:  {
+            "toplamZiyaret":toplamZiyaret ,
+            "localAddress":locals,
+            },
+            })
+        return res.status(200).json(visitor);
+        } catch (error) {
+            console.log(error)
+            return res.json({message: "Hata"})
+        }   
+
+        
+})
+
+/* 
 router.post("/signup", async (req, res)=>{
     console.log("SIGN IN POST")
     try {
@@ -136,33 +167,6 @@ router.post("/admin", async ({},res)=>{
     } catch (error) {
         return res.status(400).json({ message: error.message })
     }
-})
-router.post("/", async (req,res)=>{    
-
-    console.log("Ana Sayfa")
-
-    const localAdress= req.socket.localAddress
-    const ziyaretler = await Visitors.find({ID:"pageVisitorsData"} )   
-
-    let toplamZiyaret=      ziyaretler[0].toplamZiyaret+1
-    let locals=             ziyaretler[0].localAddress
-    let index=locals.indexOf(localAdress)
-    if(index===-1){
-        locals.push(localAdress)
-    }
-    try {
-            const visitor = await Visitors.updateOne(
-            { "ID": "pageVisitorsData"}, 
-           { $set:  {
-            "toplamZiyaret":toplamZiyaret ,
-            "localAddress":locals,
-            },
-            })
-        return res.status(200).json(visitor);
-        } catch (error) {
-            console.log(error)
-            return res.json({message: "Hata"})
-        }   
 })
 
 router.post("/user", async (req,res)=>{
@@ -297,5 +301,5 @@ router.get("/messages", async (req, res)=>{
         return res.json({error,message: "create Project Template failed"})
     }
 }) 
-  
+   */
 export default router;
