@@ -44,7 +44,11 @@ router.post("/", async (req,res)=>{
 
          
 })
+router.post("/test", async (req,res)=>{ 
+    
+    return res.send("Merhaba TEST post isteği")
 
+})
 /* 
 router.post("/signup", async (req, res)=>{
     console.log("SIGN IN POST")
