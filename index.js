@@ -18,7 +18,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
 })
  */
 app.use("/users", userRouter); 
-app.listen(process.env.PORT||5000,()=>{
+app.listen(process.env.PORT,()=>{
     mongoose
     .connect(process.env.DB_CONNECTION_STRING2)
     .then(( ) => console.log("connected to dbasda" ))
