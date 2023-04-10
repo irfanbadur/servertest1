@@ -3,7 +3,7 @@ const app=express();
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim dünyam")
+    res.send("Merhaba benim koca dünyam.")
 })
 
 app.listen(process.env.PORT||5000,()=>{
