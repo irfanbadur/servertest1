@@ -1,16 +1,9 @@
 import express from "express";
-import dotenv from "dotenv";
-import mongoose from "mongoose";
-import userRouter from "./Routers/userRouter.js";
-import cors from "cors";
-
- 
-const app = express();
-
+const app=express();
 app.use(express.json())
 
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim   dünyam.")
+    res.send("Merhaba benim  .")
 })
 
 app.listen(process.env.PORT||5000,()=>{
