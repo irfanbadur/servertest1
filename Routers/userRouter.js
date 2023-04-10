@@ -1,5 +1,5 @@
 import express from "express";
-/* 
+
 import mongoose from "mongoose";
 import MongoClient from 'mongodb'
 import bcrypt from 'bcryptjs'
@@ -8,15 +8,14 @@ import ProjectTemplate from '../models/ProjeTaslak.js'
 import MusteriDB from '../models/MusteriModel.js'
 import Mesajlar from '../models/Mesajlar.js'
 
- */
+ 
 import Visitors from '../models/pageVisitors.js'
 
 import dotenv from "dotenv";
 dotenv.config();
 const router = express.Router();
 
-router.post("/", async (req,res)=>{    
-    
+router.post("/", async (req,res)=>{   
   
     console.log("Ana Sayfa")
     const localAdress= req.socket.localAddress
@@ -200,9 +199,7 @@ router.get("/adminVisitors", async (req,res)=>{
     }
 })
 router.get("/admin", async (req,res)=>{ 
-    try {
-        
-               
+    try {                    
         const userList = await User.find()        
         return res.status(200).json({userList, message: 'Tüm kullanıcılar listesi' })
     } catch (error) {
