@@ -10,9 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json({ extended: false, limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 50000 }));
-
+app.use("/users", userRouter); 
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim  .")
+    res.send("Merhaba benim dünyacığım.")
 })
 
 app.listen(process.env.PORT||5000,()=>{
