@@ -14,9 +14,12 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
 
  
 app.get("/",(req,res)=>{
-    res.send("Merhaba benim dünyacık5.")
+    res.send("Merhaba benim dünyacık6.")
 })
 
 app.listen(process.env.PORT||5000,()=>{
-    console.log("Server")
+    mongoose
+    .connect("mongodb+srv://irfanbadur1864:pkf1b2IlBRiWCDl9@trafoproje.m7pkxhp.mongodb.net/?retryWrites=true&w=majority")
+    .then(( ) => console.log("connected to dbasda" ))
+    .catch((error) => console.log(error));
 })
