@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import userRouter from "./Routers/userRouter.js"
+import router from "./Routers/userRouter.js"
 import cors from "cors";
 
  
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: false, parameterLimit: 500
     res.send("Merhaba benim dünyacık13.")
 })
  */
-app.use("/users", userRouter); 
+app.use("/users", router); 
 app.listen(process.env.PORT,()=>{
     mongoose
     .connect(process.env.DB_CONNECTION_STRING2)
