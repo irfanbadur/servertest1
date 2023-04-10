@@ -11,8 +11,8 @@ import dotenv from "dotenv";
 dotenv.config();
 const router = express.Router();
 
- 
-// localhost:5000/users 'a yapılan post isteği
+
+/*  
 router.post("/signup", async (req, res)=>{
     console.log("SIGN IN POST")
     try {
@@ -174,8 +174,6 @@ router.post("/user", async (req,res)=>{
         return res.status(400).json({ message: error.message })
      }
 })
- 
- 
 router.get("/adminVisitors", async (req,res)=>{ 
     try {
         
@@ -196,8 +194,6 @@ router.get("/admin", async (req,res)=>{
         return res.status(400).json({ message: error.message })
     }
 })
-
-//------------ Proje Taslak 
 router.post("/ProjeTaslak", async (req, res)=>{
     try {
         const { projectOwnerUser, projectNo, customer, arsaAdi,arsaAdresi,arsaIl,arsaIlce,
@@ -259,7 +255,6 @@ router.post("/addCustomer", async (req, res)=>{
         return res.json({message: "create Project Template failed"})
     }
 }) 
-//-------- Giriş yapan  kullanıcıya projeleri geri yollanıyor-------
 router.get("/myProjects", async (req, res)=>{
     try {
 
@@ -287,7 +282,6 @@ router.post("/message", async (req, res)=>{
         return res.json({message: "create Project Template failed"})
     }
 }) 
-//-------- Admine yapan   mesajlar projeleri geri yollanıyor-------
 router.get("/messages", async (req, res)=>{
     try {
 
@@ -298,6 +292,5 @@ router.get("/messages", async (req, res)=>{
         return res.json({error,message: "create Project Template failed"})
     }
 }) 
-
- 
+ */ 
 export default router;
